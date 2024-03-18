@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import { SurveyItems } from '../../SurveyItems';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
+import { SurveyFormService } from '../../survey-form.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,31 +13,26 @@ import {MatButtonModule} from '@angular/material/button';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-
-  itemsList: SurveyItems[] = [
-    {
-      "id": 1,
-      "title": "Customer Feedback Survey",
-      "description": "Your opinion matters! Please take a moment to provide feedback on your recent experience with our products or services.",
-      "question1": "How satisfied are you with the speed of service provided?",
-      "question2": "Did our products meet your expectations?",
-      "categoryId": 4,
-      "category": {
-        "id": 4,
-        "name": "Travel and Leisure"
-      }
-    }
-  ]
-
+  router = inject(Router)
+  surveyService = inject(SurveyFormService)
+  itemsList: SurveyItems[] = [];
+  ngOnInit() {
+    this.surveyService.getAllSurveys().subscribe((result) => {
+      this.itemsList = result
+    })
+  }
   displayedColumns: string[] = ['Id', 'Title', 'Description', 'Category Name', 'Actions'];
 
-  EditClicked(id:number){
-    console.log("edit", id)
+  EditClicked(id: number) {
+    console.log("edit", id);
+    this.router.navigateByUrl("edit/"+id)
   };
-  DetailsClicked(id:number){
-    console.log("details", id)
+  DetailsClicked(id: number) {
+    console.log("details", id);
+    this.router.navigateByUrl("details/"+id)
   };
-  DeleteClicked(id:number){
-    console.log("delete", id)
+  DeleteClicked(id: number) {
+    console.log("delete", id);
+    this.router.navigateByUrl("delete/"+id)
   };
 }
