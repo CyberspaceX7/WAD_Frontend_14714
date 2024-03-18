@@ -13,10 +13,10 @@ import { Router } from '@angular/router';
 })
 export class NavigationComponent {
   router = inject(Router)
-  homeClicked() {
+  home() {
     this.router.navigateByUrl("home")
   }
-  createClicked() {
+  onCreate() {
     this.router.navigateByUrl("create")
   }
 }
