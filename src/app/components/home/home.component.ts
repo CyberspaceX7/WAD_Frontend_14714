@@ -28,7 +28,6 @@ export class HomeComponent {
     this.router.navigateByUrl("edit/"+id)
   };
   DetailsClicked(id: number) {
-    console.log("details", id);
     this.router.navigateByUrl("details/"+id)
   };
   DeleteClicked(id: number) {

@@ -1,0 +1,63 @@
+/* details.component.css */
+
+/* Container styles */
+.details-container {
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styles */
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #343a40;
+}
+
+/* Description styles */
+.description {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #495057;
+}
+
+/* Question styles */
+.questions {
+    margin-bottom: 20px;
+}
+
+.question-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #343a40;
+}
+
+.question-text {
+    font-size: 16px;
+    color: #495057;
+}
+
+/* Category styles */
+.category {
+    margin-bottom: 20px;
+}
+
+.category-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #343a40;
+}
+
+.category-name {
+    font-style: italic;
+    color: #495057;
+}
+
+.actions button {
+    margin-right: 8px; 
+  }
+  

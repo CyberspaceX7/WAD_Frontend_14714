@@ -20,4 +20,8 @@ export class SurveyFormService {
   createSurveyItem(item:any){
     return this.httpClient.post("https://localhost:7235/api/Surveys/PostSurvey", item)
   }
+
+  getSurveyById(id:number){
+    return this.httpClient.get<SurveyItems>("https://localhost:7235/api/Surveys/GetSurvey/" + id)
+  }
 }
