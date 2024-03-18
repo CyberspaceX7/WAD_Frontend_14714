@@ -9,19 +9,27 @@ export class SurveyFormService {
   httpClient = inject(HttpClient)
   constructor() { }
 
-  getAllSurveys(){
+  getAllSurveys() {
     return this.httpClient.get<SurveyItems[]>("https://localhost:7235/api/Surveys/GetSurveys")
-  }
+  };
 
-  getAllCategories(){
-    return this.httpClient.get("https://localhost:7235/api/Categories/GetCategories")
-  }
+  getAllCategories() {
+    return this.httpClient.get<SurveyItems>("https://localhost:7235/api/Categories/GetCategories");
+  };
 
-  createSurveyItem(item:any){
-    return this.httpClient.post("https://localhost:7235/api/Surveys/PostSurvey", item)
-  }
+  createSurveyItem(item: any) {
+    return this.httpClient.post<SurveyItems>("https://localhost:7235/api/Surveys/PostSurvey", item);
+  };
 
-  getSurveyById(id:number){
-    return this.httpClient.get<SurveyItems>("https://localhost:7235/api/Surveys/GetSurvey/" + id)
+  getSurveyById(id: number) {
+    return this.httpClient.get<SurveyItems>("https://localhost:7235/api/Surveys/GetSurvey/" + id);
+  };
+
+  editSurvey(item: any) {
+    return this.httpClient.put("https://localhost:7235/api/Surveys/PutSurvey", + item);
+  };
+
+  deleteSurvey(id: number) {
+    return this.httpClient.delete("https://localhost:7235/api/Surveys/DeleteSurvey/" + id);
   }
 }
