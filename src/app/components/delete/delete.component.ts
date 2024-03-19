@@ -18,7 +18,7 @@ export class DeleteComponent {
   serviceSurvey = inject(SurveyFormService)
   activatedRoute = inject(ActivatedRoute)
 
-  deleteSurvey: SurveyItems ={
+  deleteSurvey: SurveyItems = {
     id: 0,
     title: '',
     description: '',
@@ -30,19 +30,19 @@ export class DeleteComponent {
       name: ''
     }
   };
-  
-  ngOnInit(){
-    this.serviceSurvey.getSurveyById(this.activatedRoute.snapshot.params["id"]).subscribe((result)=>{
+
+  ngOnInit() {
+    this.serviceSurvey.getSurveyById(this.activatedRoute.snapshot.params["id"]).subscribe((result) => {
       this.deleteSurvey = result
     })
   };
 
-  onCancel(){
+  onCancel() {
     this.router.navigateByUrl("home")
   }
 
-  onDelete(){
-    this.serviceSurvey.deleteSurvey(this.deleteSurvey.id).subscribe(r=>{
+  onDelete() {
+    this.serviceSurvey.deleteSurvey(this.deleteSurvey.id).subscribe(r => {
       this.router.navigateByUrl("home")
     });
   }

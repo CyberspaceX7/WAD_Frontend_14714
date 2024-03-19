@@ -25,13 +25,13 @@ export class HomeComponent {
 
   EditClicked(id: number) {
     console.log("edit", id);
-    this.router.navigateByUrl("edit/"+id)
+    this.router.navigateByUrl("edit/" + id)
   };
   DetailsClicked(id: number) {
-    this.router.navigateByUrl("details/"+id)
+    this.router.navigateByUrl("details/" + id)
   };
   DeleteClicked(id: number) {
     console.log("delete", id);
-    this.router.navigateByUrl("delete/"+id)
+    this.router.navigateByUrl("delete/" + id)
   };
 }

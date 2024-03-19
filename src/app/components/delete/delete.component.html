@@ -10,13 +10,12 @@
         <li><strong>Description:</strong> {{ deleteSurvey.description }}</li>
         <li><strong>Question 1:</strong> {{ deleteSurvey.question1 }}</li>
         <li><strong>Question 2:</strong> {{ deleteSurvey.question2 }}</li>
-        <li><strong>Category ID:</strong> {{ deleteSurvey.categoryId }}</li>
         <li><strong>Category Name:</strong> {{ deleteSurvey.category.name }}</li>
       </ul>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button color="warn" (click)="onDelete()">Delete</button>
-      <button mat-button color="primary" (click)="onCancel()">Cancel</button>
+      <button mat-raised-button color="primary" (click)="onCancel()">Cancel</button>
+      <button mat-raised-button color="warn" (click)="onDelete()">Delete</button>
     </mat-card-actions>
   </mat-card>
 </div>

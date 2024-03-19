@@ -1,0 +1,49 @@
+.p-8 {
+  padding: 8px;
+}
+
+.mt-8 {
+  margin-top: 8px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+  /* Center items horizontally */
+}
+
+form {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  width: 50%;
+  max-width: 600px;
+}
+
+/* Apply styles to form fields */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+/* Apply styles to buttons container */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Apply styles to buttons */
+button {
+  width: 48%;
+}
+
+/* Hover effect on buttons */
+button:hover {
+  opacity: 0.8;
+}

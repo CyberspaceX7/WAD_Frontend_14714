@@ -35,15 +35,15 @@
                 <mat-select [(ngModel)]="catId" [(value)]="selected" name="Category">
                     @for(c of categoryObject; track c)
                     {
-                        <mat-option [value]="c.id">{{c.name}}</mat-option>
+                    <mat-option [value]="c.id">{{c.name}}</mat-option>
                     }
                 </mat-select>
             </mat-form-field>
         </div>
 
-        <div class="flex">
+        <div class="button-container">
             <button mat-raised-button (click)="toHome()" color="primary">Cancel</button>
-            <button mat-raised-button (click)="edit()" color="primary">Edit</button>
+            <button mat-raised-button (click)="edit()" color="accent">Edit</button>
         </div>
 
     </form>

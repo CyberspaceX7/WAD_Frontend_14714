@@ -7,27 +7,27 @@ import { DeleteComponent } from './components/delete/delete.component';
 
 export const routes: Routes = [
     {
-        path:"",
-        component:HomeComponent
+        path: "",
+        component: HomeComponent
     },
     {
-        path:"home",
-        component:HomeComponent
+        path: "home",
+        component: HomeComponent
     },
     {
-        path:"create",
-        component:CreateComponent
+        path: "create",
+        component: CreateComponent
     },
     {
-        path:"edit/:id",
-        component:EditComponent
+        path: "edit/:id",
+        component: EditComponent
     },
     {
-        path:"details/:id",
-        component:DetailsComponent
+        path: "details/:id",
+        component: DetailsComponent
     },
     {
-        path:"delete/:id",
-        component:DeleteComponent
+        path: "delete/:id",
+        component: DeleteComponent
     },
 ];

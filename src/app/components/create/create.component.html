@@ -1,5 +1,5 @@
 <div class="p-8 mt-8 flex justify-center">
-    <form class="shadow border w-4/12 p-4" >
+    <form class="shadow border w-4/12 p-4">
 
 
 
@@ -44,21 +44,20 @@
                 <mat-label>Choose Category</mat-label>
                 <mat-select name="Category" [(ngModel)]="selectedCategoryId">
                     @for (item of categories; track item) {
-                        <mat-option [value]="item.id">
-                            {{item.name}}
-                        </mat-option>
+                    <mat-option [value]="item.id">
+                        {{item.name}}
+                    </mat-option>
                     }
                 </mat-select>
             </mat-form-field>
-        </div> 
-
-
-
-        <div class="flex">
-            <button mat-raised-button (click)="onCreateBtn()" color="primary">Create</button>
-            <button mat-raised-button (click)="onCancel()" color="warn">Cancel</button>
         </div>
 
+
+
+        <div class="button-container">
+            <button mat-raised-button (click)="onCancel()" color="warn">Cancel</button>
+            <button mat-raised-button (click)="onCreateBtn()" color="primary">Create</button>
+        </div>
 
     </form>
 </div>

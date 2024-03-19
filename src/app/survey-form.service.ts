@@ -31,6 +31,6 @@ export class SurveyFormService {
     return this.httpClient.delete("https://localhost:7235/api/Surveys/DeleteSurvey/" + id);
   }
 
-  editSurvey(id:number, item:SurveyItems){return this.httpClient.put("https://localhost:7235/api/Surveys/PutSurvey/"+id, item)}
+  editSurvey(id: number, item: SurveyItems) { return this.httpClient.put("https://localhost:7235/api/Surveys/PutSurvey/" + id, item) }
 
 }
