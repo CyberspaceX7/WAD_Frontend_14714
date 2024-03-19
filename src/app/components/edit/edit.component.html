@@ -1,7 +1,5 @@
 <div class="p-8 mt-8 flex justify-center">
-    <form class="shadow border w-4/12 p-4" >
-
-
+    <form class="shadow border w-4/12 p-4">
 
         <div class="flex">
             <mat-form-field class="w-full">
@@ -10,8 +8,6 @@
             </mat-form-field>
         </div>
 
-
-
         <div class="flex">
             <mat-form-field class="w-full">
                 <mat-label>Description</mat-label>
@@ -19,33 +15,28 @@
             </mat-form-field>
         </div>
 
-
-
         <div class="flex">
             <mat-form-field class="w-full">
-                <mat-label>Question1</mat-label>
+                <mat-label>Question 1</mat-label>
                 <input type="text" name="question1" matInput [(ngModel)]="editSurvey.question1">
             </mat-form-field>
         </div>
 
-
-
         <div class="flex">
             <mat-form-field class="w-full">
-                <mat-label>Question2</mat-label>
+                <mat-label>Question 2</mat-label>
                 <input type="text" name="question2" matInput [(ngModel)]="editSurvey.question2">
             </mat-form-field>
         </div>
 
-
-
         <div class="flex">
             <mat-form-field class="w-full">
                 <mat-label>Choose Category</mat-label>
-                <mat-select name="Category" [(ngModel)]="categoryId">
-                    <mat-option *ngFor="let item of categoryObject" [value]="item.id">
-                        {{ item.name }}
-                    </mat-option>
+                <mat-select [(ngModel)]="catId" [(value)]="selected" name="Category">
+                    @for(c of categoryObject; track c)
+                    {
+                        <mat-option [value]="c.id">{{c.name}}</mat-option>
+                    }
                 </mat-select>
             </mat-form-field>
         </div>
@@ -54,7 +45,6 @@
             <button mat-raised-button (click)="toHome()" color="primary">Cancel</button>
             <button mat-raised-button (click)="edit()" color="primary">Edit</button>
         </div>
-
 
     </form>
 </div>

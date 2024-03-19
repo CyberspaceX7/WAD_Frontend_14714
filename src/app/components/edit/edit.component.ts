@@ -17,7 +17,7 @@ function findIndexById(jsonArray: any[], IndexToFind: number): number {
   standalone: true,
   imports: [FormsModule, MatFormFieldModule, MatSelectModule, MatInputModule, MatButtonModule],
   templateUrl: './edit.component.html',
-  styleUrl: './edit.component.css'
+  styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit {
   serviceSurvey = inject(SurveyFormService);
@@ -37,27 +37,31 @@ export class EditComponent implements OnInit {
     }
   };
 
-  categoryObject: any
-  selected: any
-  categoryId: number = 0
+  categoryObject: any;
+  selected: any;
+  catId: number = 0;
 
-  ngOnInit(){
-    this.serviceSurvey.getSurveyById(this.activatedRoute.snapshot.params["id"]).subscribe(result =>{
+  ngOnInit() {
+    this.serviceSurvey.getSurveyById(this.activatedRoute.snapshot.params["id"]).subscribe(result => {
       this.editSurvey = result;
       this.selected = this.editSurvey.categoryId;
     });
+
+    this.serviceSurvey.getAllCategories().subscribe((result) => {
+      this.categoryObject = result;
+    });
   }
 
-  toHome(){
-    this.router.navigateByUrl("home")
+  toHome() {
+    this.router.navigateByUrl("home");
   }
 
-  edit(){
-    this.editSurvey.categoryId = this.categoryId
-    this.editSurvey.category = this.categoryObject[findIndexById(this.categoryObject, this.categoryId)];
-    this.serviceSurvey.editSurvey(this.editSurvey).subscribe(res =>{
-      alert("Changes has been updated")
-      this.router.navigateByUrl("home")
-    })
+  edit() {
+    this.editSurvey.categoryId = this.catId;
+    this.editSurvey.category = this.categoryObject[findIndexById(this.categoryObject, this.catId)];
+    this.serviceSurvey.editSurvey(this.editSurvey.id, this.editSurvey).subscribe(res => {
+      alert("Changes have been updated");
+      this.router.navigateByUrl("home");
+    });
   }
 }
